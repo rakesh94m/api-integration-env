@@ -7,12 +7,17 @@ This repository contains a reinforcement learning (RL) environment built using t
 - **FastAPI Backend**: Fully compliant with the OpenEnv REST specification.
 - **Dockerized Deployment**: Hosted on Hugging Face Spaces for 24/7 availability.
 - **Structured Logging**: `inference.py` follows the mandatory `[START]`, `[STEP]`, and `[END]` format for automated scoring.
+  
+## Environment Details
+- **OpenEnv Space:** [https://huggingface.co/spaces/rakesh94m/api_integration_env](https://huggingface.co/spaces/rakesh94m/api_integration_env)
+- **API Endpoint:** [https://rakesh94m-api-integration-env.hf.space](https://rakesh94m-api-integration-env.hf.space)
 
-## How to Run
-1. **Environment URL**: [[Insert your Hugging Face Space Link Here]](https://huggingface.co/spaces/rakesh94m/api_integration_env)
-2. **Inference**:
-   ```bash
-   export API_BASE_URL="[your_space_url](https://rakesh94m-api-integration-env.hf.space)"
-   export MODEL_NAME="meta-llama/Llama-3.1-8B-Instruct"
-   export HF_TOKEN="hf_...czxw"
-   python inference.py
+## Running Inference
+To run the evaluation script, use the following commands in your terminal:
+
+```bash
+export API_BASE_URL="[https://rakesh94m-api-integration-env.hf.space](https://rakesh94m-api-integration-env.hf.space)"
+export MODEL_NAME="meta-llama/Llama-3.1-8B-Instruct"
+export HF_TOKEN="your_huggingface_token_here"
+
+python inference.py
