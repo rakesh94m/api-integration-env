@@ -2,19 +2,17 @@ import os
 import asyncio
 from openai import OpenAI
 
-# 1. Setup credentials (These will be provided by the Hackathon platform)
+# Setup credentials 
 API_BASE_URL = os.getenv("API_BASE_URL", "https://router.huggingface.co/v1")
 MODEL_NAME = os.getenv("MODEL_NAME", "Qwen/Qwen2.5-72B-Instruct")
-HF_TOKEN = os.getenv("HF_TOKEN") # You will need to set this in your terminal!
+HF_TOKEN = os.getenv("HF_TOKEN")  
 
 client = OpenAI(base_url=API_BASE_URL, api_key=HF_TOKEN)
 
 async def main():
-    # This is a simplified "Loop" for your AI agent
     print(f"[START] task=api_debug env=api_integration model={MODEL_NAME}")
     
-    # In a real submission, you would use 'httpx' to call your localhost:8000
-    # For now, let's just print the logic flow.
+   
     
     step = 1
     action = "GET /users/1"
