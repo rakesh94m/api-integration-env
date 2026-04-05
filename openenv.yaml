@@ -1,0 +1,6 @@
+name: "api_debug_challenge"
+version: "1.0.0"
+tasks:
+  - id: "task_1"
+    name: "Find Alice"
+    difficulty: "easy"
