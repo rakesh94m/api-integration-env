@@ -12,7 +12,7 @@ This repository contains a reinforcement learning (RL) environment built using t
 1. **Environment URL**: [Insert your Hugging Face Space Link Here]
 2. **Inference**:
    ```bash
-   export API_BASE_URL="your_space_url"
-   export MODEL_NAME="your_model"
-   export HF_TOKEN="your_token"
+   export API_BASE_URL="[your_space_url](https://rakesh94m-api-integration-env.hf.space)"
+   export MODEL_NAME="meta-llama/Llama-3.1-8B-Instruct"
+   export HF_TOKEN="hf_...czxw"
    python inference.py
