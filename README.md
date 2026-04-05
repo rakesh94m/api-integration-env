@@ -9,7 +9,7 @@ This repository contains a reinforcement learning (RL) environment built using t
 - **Structured Logging**: `inference.py` follows the mandatory `[START]`, `[STEP]`, and `[END]` format for automated scoring.
 
 ## How to Run
-1. **Environment URL**: [Insert your Hugging Face Space Link Here]
+1. **Environment URL**: [[Insert your Hugging Face Space Link Here]](https://huggingface.co/spaces/rakesh94m/api_integration_env)
 2. **Inference**:
    ```bash
    export API_BASE_URL="[your_space_url](https://rakesh94m-api-integration-env.hf.space)"
