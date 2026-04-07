@@ -5,12 +5,10 @@ from typing import Optional, Dict, Any
 
 app = FastAPI()
 
-
 class Action(BaseModel):
     method: str
     endpoint: str
     payload: Optional[Dict[str, Any]] = None
-
 
 @app.get("/health")
 async def health():
@@ -34,8 +32,7 @@ async def step(action: Action):
     }
 
 def main():
-    # MANDATORY: Port must be 7860 for Hugging Face Spaces
-    uvicorn.run("server.app:app", host="0.0.0.0", port=7860, reload=True)
+    uvicorn.run("server.app:app", host="0.0.0.0", port=7860)
 
 if __name__ == "__main__":
     main()
