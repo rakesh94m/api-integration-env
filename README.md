@@ -19,27 +19,21 @@ A real-world OpenEnv environment where AI agents learn to interact with REST API
 
 ## Tasks
 - **fetch_user** (easy): Fetch user details via GET /users/1
-- **create_order** (medium): Create an order via POST /orders with correct payload
+- **create_order** (medium): Create an order via POST /orders with correct payload  
 - **debug_api** (hard): Diagnose a degraded /status endpoint
 
 ## Action Space
-```json
 {"method": "GET|POST", "endpoint": "/path", "payload": null}
-```
 
 ## Observation Space
-```json
 {"docs_snippet": "task instructions", "last_response": {}, "done": false}
-```
 
 ## Reward
 Partial rewards (0.05–0.95) for progress. Max reward per task: 0.95.
 
 ## Setup
-```bash
 docker build -t api-env .
 docker run -p 7860:7860 api-env
-```
 
 ## Baseline Scores
 - fetch_user: 0.95
