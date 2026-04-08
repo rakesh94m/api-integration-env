@@ -6,13 +6,14 @@ import json
 import sys
 from openai import OpenAI
 
-API_BASE_URL = os.getenv("API_BASE_URL", "https://rakesh94m-api-integration-env.hf.space")
-MODEL_NAME = os.getenv("MODEL_NAME", "Qwen/Qwen2.5-72B-Instruct")
-HF_TOKEN = os.getenv("HF_TOKEN", "")
+API_BASE_URL = os.environ.get("API_BASE_URL", "https://rakesh94m-api-integration-env.hf.space")
+MODEL_NAME = os.environ.get("MODEL_NAME", "Qwen/Qwen2.5-72B-Instruct")
+API_KEY = os.environ.get("API_KEY", os.environ.get("HF_TOKEN", "dummy"))
+
 
 client = OpenAI(
-    base_url="https://api-inference.huggingface.co/v1",
-    api_key=HF_TOKEN or "dummy"
+    base_url=API_BASE_URL,
+    api_key=API_KEY
 )
 
 TASKS = ["fetch_user", "create_order", "debug_api"]
