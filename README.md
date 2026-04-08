@@ -1,17 +1,47 @@
-# API Integration Environment - OpenEnv Round 1
+---
+title: Api Integration Env
+emoji: 🏆
+colorFrom: pink
+colorTo: gray
+sdk: docker
+pinned: false
+license: mit
+short_description: A real-world OpenEnv environment for API debugging agents
+tags:
+  - openenv
+  - reinforcement-learning
+  - agent
+---
 
-## Environment Access
-- **Hugging Face Space:** [https://huggingface.co/spaces/rakesh94m/api_integration_env](https://huggingface.co/spaces/rakesh94m/api_integration_env)
-- **API Base Endpoint:** `https://rakesh94m-api-integration-env.hf.space`
+# API Integration Environment
 
-> **Note:** The API Endpoint will return a `404 Not Found` if visited in a browser. This is expected as it is a headless API. Please use the `/docs` suffix to view the interactive API documentation.
+A real-world OpenEnv environment where AI agents learn to interact with REST APIs by fetching data, creating resources, and debugging endpoints.
 
-## How to Run Inference
-To evaluate this environment, set the following environment variables in your terminal:
+## Tasks
+- **fetch_user** (easy): Fetch user details via GET /users/1
+- **create_order** (medium): Create an order via POST /orders with correct payload
+- **debug_api** (hard): Diagnose a degraded /status endpoint
 
+## Action Space
+```json
+{"method": "GET|POST", "endpoint": "/path", "payload": null}
+```
+
+## Observation Space
+```json
+{"docs_snippet": "task instructions", "last_response": {}, "done": false}
+```
+
+## Reward
+Partial rewards (0.05–0.95) for progress. Max reward per task: 0.95.
+
+## Setup
 ```bash
-export API_BASE_URL="[https://rakesh94m-api-integration-env.hf.space](https://rakesh94m-api-integration-env.hf.space)"
-export MODEL_NAME="meta-llama/Llama-3.1-8B-Instruct"
-export HF_TOKEN="your_huggingface_token_here"
+docker build -t api-env .
+docker run -p 7860:7860 api-env
+```
 
-python inference.py
+## Baseline Scores
+- fetch_user: 0.95
+- create_order: 0.95
+- debug_api: 0.95
